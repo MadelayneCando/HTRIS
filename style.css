@@ -1,0 +1,313 @@
+body{
+    background-color: #18191A;
+}
+.main{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    align-items: center;
+    background-color: #18191A;
+    height: 30%
+}
+
+h4, h2, small, a{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+.carousel{
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .carousel{
+        margin: 0px 60px;    
+    }
+}
+
+.carousel h2{
+    font-size: 40px;
+    line-height: 38px;
+    padding-bottom: 50px;
+    opacity: 0.9;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align: left;
+    color: #ffffff;
+}
+
+.carrusel-list{
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    height: 250px;
+    padding: 10px 0px;
+    margin: 0px auto;
+    max-width: 40vw;
+    overflow: hidden;
+}
+
+.carrusel-track{
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    transition: .5s ease-in-out;
+    height: 300px;
+}
+
+.carrusel{
+    position: relative;
+    width: 170px;
+    float: left;
+    box-sizing: border-box;
+    display: flex;
+    height: 100%;
+    justify-items: center;
+    align-items: center;
+}
+
+.carrusel h4{
+    position: absolute;
+    z-index: 1;
+    font-size: 22px;
+    line-height: 23px;
+    color: #ffffff;
+    padding: 15px;
+    text-shadow: 0px 1px 2px rgb(110, 110, 110) ;
+}
+
+.carrusel h4 small{
+    font-size: 15px;
+    display: block;
+}
+
+.carrusel a img{
+    object-fit: cover;
+    height: 230px;
+    width:150px;
+    border-radius: 15px ;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5);
+    transition: .3x ease-in-out;
+}
+
+
+/* Reacciones */
+
+.reaction {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.like-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.like-button i {
+    color: white;
+    padding: 5%;
+    margin-left: -6px;
+    font-size: 20px;
+}
+
+.reaction-count {
+    margin-left: 5px;
+    font-size: 18px;
+    color: white;
+}
+
+.carrusel-arrow{
+    border-radius: 30px;
+    background-color:#ffffff;
+    position: absolute;
+    z-index: 4;
+    width: 48px;
+    height: 48px;
+    text-align: center;
+    border: 0;
+    cursor: pointer;
+}
+
+.carrusel-arrow:focus{
+    outline: 0;
+}
+
+.carrusel-arrow svg{
+    width: 12px;
+    height: 100%;
+    color: black;
+}
+.carrusel-prev{
+    left: 0px;
+}
+.carrusel-next{
+    right: 0px;
+}
+
+/* Modal */
+/* Estilos para el modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 2%;
+}
+.modal-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Ajusta el margen superior según sea necesario */
+}
+
+.modal-controls button {
+    margin: 0 10px; /* Ajusta el espacio entre los botones */
+}
+.close {
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    cursor: pointer;
+}
+
+/* PUBLICACION */
+
+.container {
+    position: relative;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    margin-top: 2%;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #18191A;
+    justify-content: center;
+}
+
+.post-body{
+    max-width: 90%;
+    max-height: 80%;
+    overflow: hidden;
+    background-color: rgb(51, 51, 51);
+    border-radius: 9px;
+    padding: 1rem;
+    color: white;
+}
+
+.user-info{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+}
+h2{
+    position: relative;
+    display: inline-block;
+    top: -15px;
+}
+.user-pro-pic{
+    position: relative;
+    width: 50px;
+    border-radius: 50px;
+}
+.date-time{
+    position: relative;
+    margin-left: 3.5rem;
+    top: -10px;
+}
+.description{
+    position: relative;
+    padding: 0.5rem;
+}
+.upload-img{
+    position: relative;
+    width: 100%;
+}
+.likes-comment-preview{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding: 0.5rem;
+    justify-content: space-between;
+}
+.likes-preview{
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.likes-preview .fa-thumbs-up, .fa-heart {
+    position: relative;
+    border-radius: 40px;
+    background-color: rgb(19, 128, 200);
+    color: white;
+    padding: 5%;
+    border: 1px solid white;
+}
+
+.fa-thumbs-up{
+    z-index: 211;
+}
+
+.fa-heart{
+    color: white;
+background-color: red;
+margin-left: -6px;
+}
+
+.count-likes{
+    margin: 2%;
+    margin-top: 5px;
+}
+
+.likes-comment-share-icons{
+    position: relative;
+    width: 100%;
+    border-top: 1px solid gray;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 20px;
+    color: gray;    
+}
+
+.likes-comment-share-icons > div{
+    cursor: pointer;
+}
+.likes-comment-share-icons > div:nth-child(1):focus{
+    color: rgb(19, 128, 200)
+}
+.likes-comment-share-icons i{
+    font-size: 16px;
+}
+
+.botonesuser{
+justify-content: right;
+}

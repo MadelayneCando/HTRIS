@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mensajes Enviados</title>
+</head>
+<body>
+  <h1>Mensajes Enviados</h1>
+  <div id="mensajesEnviados"></div>
+
+  <script>
+    // Obtener el token del almacenamiento local
+    const token = localStorage.getItem('token');
+    console.log(token);
+    // Realizar una solicitud para obtener los mensajes enviados
+    async function obtenerMensajesEnviados() {
+      try {
+        const response = await fetch('http://localhost:3000/mensajesenviados', {
+          method: 'GET',
+          headers: {
+            'Authorization': `${token}`
+          }
+        });
+
+        if (response.ok) {
+          const { mensajesEnviados } = await response.json();
+          mostrarMensajesEnviados(mensajesEnviados);
+        } else {
+          console.error('Error al obtener los mensajes enviados:', response.statusText);
+          alert('Error al obtener los mensajes enviados.');
+        }
+      } catch (error) {
+        console.error('Error en la solicitud:', error);
+        alert('Error en la solicitud. Por favor, inténtalo de nuevo.');
+      }
+    }
+
+    // Mostrar los mensajes enviados en la página
+    function mostrarMensajesEnviados(mensajes) {
+      const mensajesEnviadosDiv = document.getElementById('mensajesEnviados');
+
+      mensajes.forEach((mensaje) => {
+        const mensajeDiv = document.createElement('div');
+        mensajeDiv.innerHTML = `
+          <p>De: ${mensaje.msj_emisor}</p>
+          <p>Para: ${mensaje.msj_receptor}</p>
+          <p>Asunto: ${mensaje.msj_asunto}</p>
+          <p>Mensaje: ${mensaje.msj_mensaje}</p>
+          <p>Fecha: ${mensaje.msj_fecha}</p>
+          <hr>
+        `;
+        mensajesEnviadosDiv.appendChild(mensajeDiv);
+      });
+    }
+
+    // Llamar a la función para obtener los mensajes enviados cuando la página se carga
+    window.onload = obtenerMensajesEnviados;
+  </script>
+</body>
+</html>
